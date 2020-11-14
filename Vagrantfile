@@ -16,6 +16,7 @@ Vagrant.configure("2") do |config|
  config.vm.box_version = "~> 20200304.0.0"
 
  config.vm.network "forwarded_port", guest: 9000, host: 9000
+ config.vm.network "forwarded_port", guest: 3306, host: 3306
 
  config.vm.provision "shell", inline: <<-SHELL
    systemctl disable apt-daily.service
